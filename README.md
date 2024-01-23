@@ -78,6 +78,16 @@ Additional Pages:
 
 + Info Page: Displays gold price information over the past 15 days and full historical data.
 
+## Installation
+
++ Clone the repository
++ Navigate to the project directory
++ Install the required Python packages : pip install -r requirements.txt
++ Run migrations: python manage.py migrate
++ Start the development server: python manage.py runserver
++ Open your web browser and go to http://localhost:8000/ to access the Gold Price Prediction Web App.
+
+
 ## Conclusion
 
  <div align="justify"> The Gold Price Prediction Web App combines data analysis, machine learning, and web development to provide users with insights into gold price trends. It offers a user-friendly interface with interactive visualizations and real-time data integration, making it a valuable tool for anyone interested in gold market analysis. Feel free to explore and customize the application based on your specific needs. </div>
