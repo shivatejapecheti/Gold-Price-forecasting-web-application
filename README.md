@@ -93,4 +93,6 @@ Additional Pages:
  <div align="justify"> The Gold Price Prediction Web App combines data analysis, machine learning, and web development to provide users with insights into gold price trends. It offers a user-friendly interface with interactive visualizations and real-time data integration, making it a valuable tool for anyone interested in gold market analysis. Feel free to explore and customize the application based on your specific needs. </div>
 
 
+## Citation
 
+If you find this work useful for your research or project, please consider citing it. 
