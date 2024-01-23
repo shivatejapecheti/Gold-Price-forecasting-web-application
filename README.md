@@ -2,14 +2,66 @@
 
  <div align="justify"> The Gold Price Prediction Web App is a Django-based application that leverages machine learning techniques to predict gold prices. This detailed overview provides insights into the methodologies, features, technologies used, and the functionality of the application. </div>
 
+ 
+![Overview](https://github.com/shivatejapecheti/Gold-Price-forecasting-web-application/assets/126412107/62567332-eaba-4c7d-afc1-1f31bcc10773)
+
+Technologies Used: <div align="left">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" height="40" alt="django logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" height="40" alt="pandas logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="40" alt="html5 logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="40" alt="css3 logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40" alt="javascript logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="40" alt="python logo"  />
+</div>
+
+###
+
+1. Django (Web Framework):
+
++ Provides a robust and scalable web application structure.
+  
+2. Pandas and NumPy (Data Analysis):
+
++ Used for data manipulation and analysis.
+  
+3. Scikit-Learn (Machine Learning):
+
++ Implements the linear regression model for gold price prediction.
+  
+4. YFinance (Yahoo Finance API):
+
++ Fetches historical gold price data for analysis.
+  
+5. Plotly (Data Visualization):
+
++ Creates interactive and visually appealing plots.
+  
+6. Pytz (Timezone Handling):
+
++ Manages user timezones.
+  
+7. Requests (HTTP Library):
+
++ Used for integrating external API for real-time gold prices.
+  
+8. HTML, CSS, JavaScript (Frontend):
+
++ Standard web technologies for frontend development.
+
  ## Methodology
 
 1. Data Collection with Yahoo Finance
    The application fetches historical gold price data from Yahoo Finance using the yfinance library. This data includes the daily closing prices of the Gold ETF ('GLD').
 
-2. Exploratory Data Analysis (EDA
+2. Exploratory Data Analysis (EDA) 
 
-Features:
+   Features:
+
 + Closing Price Plot: Visualizes the historical closing prices of the Gold ETF using Plotly.
 + Linear Regression Model: Utilizes a linear regression model with 3-day and 9-day moving averages as explanatory variables.
 + Prediction Plot: Compares predicted gold prices with actual prices for the test dataset.
@@ -41,4 +93,3 @@ Timezone Page: Demonstrates setting and retrieving user timezones.
 Info Page: Displays gold price information over the past 15 days and full historical data.
 
 
-![Overview](https://github.com/shivatejapecheti/Gold-Price-forecasting-web-application/assets/126412107/62567332-eaba-4c7d-afc1-1f31bcc10773)
