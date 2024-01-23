@@ -1,0 +1,288 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information-Page</title>
+
+    <!-- Include the provided styles -->
+    <link rel="stylesheet" href="{% static 'GoldPricePrediction/home.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalnia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Carattere&family=Kalnia&display=swap" rel="stylesheet">
+
+    <style>
+        
+        /* Reset styles and general styling */
+        * {
+                margin: 0;
+                padding: 0;
+                text-align: center;         
+                color: #7f7f7f;
+            }
+    
+            .navbar { 
+                background-color: #ffcccc; /* Set nav color */
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 20px;
+                margin-top: 30px;
+                margin-left: 30px;
+                margin-right: 30px;
+                border-radius: 25px;
+            }
+            .navbar-brand {
+                display: inline-block;
+                margin-left: 60px; /* Adjust alignment */
+                color: #252525; /* Font color */
+                text-decoration:none
+    
+            }
+    
+            .navbar-nav {
+                margin-left: auto; /* Align to the right */
+            }
+    
+            /* Existing styles... */
+            .navbar-nav .nav-item {
+            margin-right: 60px; /* Adjust spacing between items */
+            text-align: right;
+            display: inline-block;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            /* float: none; */
+            /* vertical-align: top; */
+            }
+    
+            .navbar-nav .nav-item .nav-link {
+            color: #000000; /* Font color */
+            position: relative; /* Relative position */
+            text-decoration: none; /* Remove default underline */
+            overflow: hidden; /* Hide overflow for the pseudo-element */
+            }
+    
+            .navbar-nav .nav-item .nav-link::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 1px; /* Thickness of the line */
+                background: linear-gradient(90deg, transparent, #000000, transparent); /* Gradient as the underline */
+                transition: width 0.3s ease; /* Transition properties */
+                transform-origin: center;
+                transform: scaleX(0); /* Initially, no width */
+            }
+    
+            .navbar-nav .nav-item .nav-link:hover::before {
+                width: 100%; /* Full width on hover */
+                transform: scaleX(1); /* Scale to full width */
+            }
+    
+    
+            /* Additional styles... */
+
+            p {
+                line-height: 2;
+            }
+
+            
+            body {
+                font-family: 'Kalnia', sans-serif;
+                background-color: #fff8e8;
+            }
+
+        
+
+    .container1-fluid {
+        /* display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        margin-bottom: 30px;
+        background-color: #f7f7f7; 
+        padding: 15px; 
+        border-radius: 10px;  */
+        /* columns: 2; */
+
+        /* display: grid;
+        align-items: center; 
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 5px; */
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+
+    }
+
+    .container-fluid {
+            width: 60%;
+            margin: auto;
+            padding: 20px;
+            
+            padding-top: 20px;
+        }
+
+        .container1-fluid {
+            background-color: #ffeaea;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ffb6b6;
+            
+        }
+
+        .tett {
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 1.5em;
+            margin-right: 15px;
+        }
+        
+
+        .hedd {
+            line-height: 1.6;
+            color: #555;
+            margin-left: 15px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .image-container img {
+            /* max-width: 100%;
+            max-height: 100%;
+            border-radius: 5px;
+            border: 1px solid #ddd; */
+            height: 200px;
+            width: 200px;
+        }
+
+        .list-group-item {
+        display: block;
+        width: 97%;
+        padding: 15px 15px;
+        margin-bottom: -1px;
+        background-color: #ffeadd;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        text-align: center;
+        text-decoration: none;
+        color: #333;
+        }
+
+        .list-group-item:hover {
+        background-color: #ffcccc; /* Change background color on hover */
+        color: #fff; /* Change text color on hover */
+        border-color: #ffcccc; /* Change border color on hover */
+        transform: translateY(-2px); /* Lift the item slightly on hover */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a shadow on hover */
+         }
+
+
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'home' %}">GLD</a>
+    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button> -->
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'info_page' %}">Gold Brands</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="{% url 'information' %}">Information</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'plots' %}">Plots</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'goldpresentprice' %}">Gold Price</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Your content -->
+<div class="container-fluid mt-4 bg-light"> <!-- Adding a light background color -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="info-Page">
+                
+                <h3 class="tett">Jewelry Brands website</h3>
+                <ul class="list-group">
+                    <a class="list-group-item" href="https://www.tiffany.com/" target="_blank">Tiffany & Co.</a>
+                    <a class="list-group-item" href="https://www.cartier.com/en-us/home" target="_blank">Cartier</a>
+                    <a class="list-group-item" href="https://www.harrywinston.com/en" target="_blank">Harry Winston</a>
+                    <a class="list-group-item" href="https://www.chopard.com/en-intl" target="_blank">Chopard</a>
+                    <a class="list-group-item" href="https://www.graff.com/international-en/home/" target="_blank">Graff</a>
+                    <a class="list-group-item" href="https://www.bulgari.com/en-in/?gad_source=1&gclid=CjwKCAiAvoqsBhB9EiwA9XTWGQ7IRBhzW3uPIuqaT7-Ix8v6Cz1rn4jn2ROo69v-E4oUvRrVbKcLkBoCa3gQAvD_BwE&gclsrc=aw.ds" target="_blank">Bvlgari</a>
+                    <a class="list-group-item" href="https://www.buccellati.com/en_row/" target="_blank">Buccellati</a>
+                    <a class="list-group-item" href="https://www.davidyurman.com/" target="_blank">David Yurman</a>
+                    <a class="list-group-item" href="https://www.vancleefarpels.com/us/en/home.html" target="_blank">Van Cleef & Arpels</a>
+                    <a class="list-group-item" href="https://www.bryananthonys.com/" target="_blank">Bryan Anthony</a>
+
+                </ul>
+                
+                <div class="container1-fluid">
+                    <h3 class="tett">Jewelry Brands in the USA</h3>
+                    <div class="image-container">
+                        <img src="https://media.glamour.com/photos/64cf0095546c3c8c7c71be78/1:1/w_2000,h_2000,c_limit/best%20jewelry%20brands.jpg" alt="Image description">
+                    </div>
+                    <p class="hedd">
+                        The fascination with jewelry is spread rampantly across the world. Adoring ornamental pieces has become an important fashion accessory for many people lately in Western countries as well. In the United States of America, people are wearing ornaments like necklaces, rings, bracelets, earrings, luxurious jewelry pieces and so on. The jewelry market in the United States of America has gained significant sales volume with the jewelry industry garnering a revenue of more than $100,000 in fiscal 2021. Some of the popular jewelry brands in the U.S. are:
+                    </p>
+                </div>
+                <div class="container1-fluid">
+                    <h3 class="tett">Mysterious Metal – Gold</h3>
+                    <div class="image-container">
+                        <img src="https://img.freepik.com/free-photo/mystery-box-with-gifts-concept_23-2150063202.jpg?size=626&ext=jpg&ga=GA1.1.1546980028.1703980800&semt=ais" alt="Image description">
+                    </div>
+                    <p class="hedd">Gold, the precious metal, naturally possesses a subtle array of unique characteristics. The atoms in the yellow metal are heavier when compared with other metals like silver. This characteristic helps the electrons in the metal to move faster, allowing some amount of light to be absorbed into the metal. Hence, the physical quality of absorbing the light makes gold its special shine come naturally from within the metal.</p>
+                </div>
+                <div class="container1-fluid">
+                    <h3 class="tett">Gold Prices USA</h3>
+                    <div class="image-container">
+                        <img src="https://www.arabianbusiness.com/cloud/2021/09/15/EAcNGQzk-Gold-16.jpg" alt="Image description">
+                    </div>
+                    <p class="hedd">The gold price in USA has witnessed tremendous growth over the last few years. The prices of the ornamental metal trade in tandem with the interest rates, as they share an inverse relationship, lower interest rates pressure the metal to surge and vice versa. The gold rates in the bullion market in America play a prominent role in deciding the rates of gold in other countries globally. A surge or dip in the gold rates in the USA will have a direct effect on gold prices in the local markets in India. The United States of America consisting of 50 states is the most populous country in the world.</p>
+                </div>
+                <div class="container1-fluid">
+                    <h3 class="tett">What makes gold a precious metal?</h3>
+                    <div class="image-container">
+                        <img src="https://www.geologypage.com/wp-content/uploads/2019/04/Precious-Metal-gold-nugget-GeologyPage.jpg" alt="Image description">
+                    </div>
+                    <p class="hedd">Gold, the yellow metal, is considered rare and has higher economic value when compared with other metals. Gold metal has the biggest market of the five main precious metals traded in the market. It is referred to as the monetary metal owing to the history of its usage in currency. Apart from used as an ornament to enhance the beauty of women and men, the metal is a good conductor of electricity, highly malleable and is corrosion-resistant. Metal does not have an industrial component. It is the most sought form of investment during turbulent times. Metal has witnessed solid growth during the financial crisis period. Since the beginning of 2001, the gold price in the USA has witnessed a robust advancement of around 15 per cent every year.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <!-- Footer content if needed -->
+    <p>&copy;Gold Price Forecast App</p>
+</footer>
+</body>
+</html>

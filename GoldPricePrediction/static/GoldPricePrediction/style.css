@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: "Merriweather", sans-serif;
+    color: #7f7f7f;
+}
+hr {
+    border-color: #bcdfdf;
+    border-width: 5px;
+    border-style: none;
+    border-top-style: dotted;
+    width: 5%;
+    margin: auto;
+}  
+p {
+    line-height: 2;
+}
+h1 {
+    /* color: blueviolet; */
+    color: #66bfbf;
+}
+.h2-h3 {
+    color: #11999e;
+    padding: 0;
+    margin: 70px 0 0 0;
+    font-family: "Montserrat", sans-serif;
+}
+.navbar-dark .navbar-brand {
+    color: #FFD700;
+}
+.Top-Container-fluid {
+    margin: 0;
+    height: 100vh;
+    background-color: #e4f9f5;
+}
+.Top-Heading {
+    padding: 15vh 0 0 0;
+}
+.Top-paragraph {
+    color: #66bfbf;
+    margin: 0;
+}
+.Wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0;
+    margin: 5vh 20vw 5vh 20vw;
+}
+.card {
+    flex: 0 0 32%;
+    height: 20vh;
+    margin-bottom: 5px;
+}
+.card-text {
+    color: #40514e;
+}
+.card-title {
+    color: #11999e;
+}
+.footer { 
+    height: 10em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #343a40;
+}
+.footer p {
+    margin: 0;
+}
+
+/* Information-Page */
+.set {
+    display: inline-block;
+    height: 18.75rem; /*300/16=18.75rem*/
+    width: 60rem;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Update your existing CSS and incorporate Bootstrap classes */
+
+/* Override Bootstrap container class */
+.Top-Container-fluid {
+    /* Your custom styles */
+    margin: 0;
+    height: 100vh;
+    background-color: #e4f9f5;
+}
+
+/* Override Bootstrap heading classes */
+.Top-Heading {
+    /* Your custom styles */
+    padding: 15vh 0 0 0;
+}
+
+/* Override Bootstrap text color */
+.Top-paragraph {
+    /* Your custom styles */
+    color: #66bfbf;
+    margin: 0;
+}
+
+/* Wrapper using Bootstrap grid system */
+.Wrapper {
+    /* Update to Bootstrap container and row */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0;
+    margin: 5vh 20vw 5vh 20vw; /* Consider using Bootstrap spacing utilities */
+}
+
+/* Update card styles with Bootstrap classes */
+.card {
+    /* Your custom styles */
+    flex: 0 0 32%;
+    height: 20vh;
+    margin-bottom: 5px;
+}
+
+/* Override Bootstrap card text colors */
+.card-text {
+    /* Your custom styles */
+    color: #40514e;
+}
+
+/* Override Bootstrap card title colors */
+.card-title {
+    /* Your custom styles */
+    color: #11999e;
+}
+
+/* Update footer styles with Bootstrap classes */
+.footer { 
+    /* Your custom styles */
+    height: 10em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #343a40;
+}
+
+.footer p {
+    /* Your custom styles */
+    margin: 0;
+}
+
+/* Information-Page: Set class using Bootstrap utilities */
+.set {
+    /* Your custom styles */
+    display: inline-block;
+    height: 18.75rem; /*300/16=18.75rem*/
+    width: 60rem;
+    /* Add Bootstrap classes to complement your styles */
+    /* For example: */
+    /* Replace height and width with Bootstrap's container class */
+    /* Replace display: inline-block with Bootstrap's grid system */
+    /* Utilize Bootstrap's text color classes where necessary */
+}
+
+
+    
+
+
+
+
+
+
+/* Add these styles to your CSS file */
+
+.info-container {
+    background-color: #e8e6ff; /* Light gray background color */
+    padding: 20px;
+    border-radius: 8px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.info-container-light {
+    background-color: #e8e6ff; /* Even lighter gray background color */
+    padding: 20px;
+    border-radius: 8px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
+
+
+
+.describe{
+    text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    color: #90b7ff;
+    margin-top: 2%;
+}

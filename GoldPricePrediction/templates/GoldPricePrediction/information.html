@@ -1,0 +1,361 @@
+{% load static %}
+
+<!-- {
+    % extends 'GoldPricePrediction/base.html' %} -->
+
+{% block title %}
+    <!-- Information-Page  -->
+{% endblock title %}
+
+{% block content %}
+    <!-- Include the provided styles in the head section -->
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'GoldPricePrediction/home.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kalnia&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Carattere&family=Kalnia&display=swap" rel="stylesheet">
+
+        <style>
+            /* Reset styles and general styling */
+            * {
+                margin: 0;
+                padding: 0;
+                text-align: center;         
+                color: #7f7f7f;
+            }
+    
+            .navbar { 
+                background-color: #ffcccc; /* Set nav color */
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 20px;
+                margin-top: 30px;
+                margin-left: 30px;
+                margin-right: 30px;
+                border-radius: 25px;
+            }
+            .navbar-brand {
+                display: inline-block;
+                margin-left: 60px; /* Adjust alignment */
+                color: #252525; /* Font color */
+                text-decoration:none
+    
+            }
+    
+            .navbar-nav {
+                margin-left: auto; /* Align to the right */
+            }
+    
+            /* Existing styles... */
+            .navbar-nav .nav-item {
+            margin-right: 60px; /* Adjust spacing between items */
+            text-align: right;
+            display: inline-block;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            /* float: none; */
+            /* vertical-align: top; */
+            }
+    
+            .navbar-nav .nav-item .nav-link {
+            color: #000000; /* Font color */
+            position: relative; /* Relative position */
+            text-decoration: none; /* Remove default underline */
+            overflow: hidden; /* Hide overflow for the pseudo-element */
+            }
+    
+            .navbar-nav .nav-item .nav-link::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 1px; /* Thickness of the line */
+                background: linear-gradient(90deg, transparent, #000000, transparent); /* Gradient as the underline */
+                transition: width 0.3s ease; /* Transition properties */
+                transform-origin: center;
+                transform: scaleX(0); /* Initially, no width */
+            }
+    
+            .navbar-nav .nav-item .nav-link:hover::before {
+                width: 100%; /* Full width on hover */
+                transform: scaleX(1); /* Scale to full width */
+            }
+    
+    
+            /* Additional styles... */
+    
+                    
+            hr {
+                border-color: #bcdfdf;
+                border-width: 5px;
+                border-style: none;
+                border-top-style: dotted;
+                width: 5%;
+                margin: auto;
+            }
+            
+            p {
+                line-height: 2;
+            }
+            
+            h1 {
+                color: #66bfbf;
+            }
+            
+            .h2-h3 {
+                color: #11999e;
+                padding: 0;
+                margin: 15px 0 0 20px;
+                margin-bottom: 15px;
+            }
+            
+            /* Specific styles for elements on the home page */
+            /* Use classes or IDs to target specific elements if needed */
+            /* For example: */
+            
+            /* Top section */
+            .Top-Container-fluid {
+                margin: 0;
+                height: 100vh;
+                background-color: #e4f9f5;
+            }
+            
+            .Top-Heading {
+                padding: 5vh 0 0 0;
+            }
+            
+            .Top-paragraph {
+                color: #66bfbf;
+                margin: 0;
+            }
+            
+            /* Wrapper */
+            .Wrapper {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                padding: 0 50px;
+                margin: 5vh 20vw 5vh 20vw;
+                
+            }
+            
+            .card {
+                flex: 0 0 32%;
+                height: 20vh;
+                margin-bottom: 5px;
+            }
+            
+            .card-text {
+                color: #40514e;
+            }
+            
+            .card-title {
+                color: #11999e;
+            }
+            
+            /* Footer */
+            .footer { 
+                height: 10em;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #343a40;
+            }
+            
+            .footer p {
+                margin: 0;
+            }
+            
+            /* Additional styles */
+            /* Add any other specific styles for elements on this page */
+            /* For example: */
+            
+            /* Description section */
+            .describe {
+                text-align: center;
+                margin-left: 15%;
+                margin-right: 15%;
+                color: #a071a0;
+                margin-top: 2%;
+            }
+            
+            body {
+                font-family: 'Kalnia', sans-serif;
+                background-color: #fff8e8;
+            }
+            .namaste{
+              width: 500px;
+            }
+
+
+
+            .info-container {
+                width: 70%; /* Box occupies 70% of the screen width */
+                margin: 20px auto; /* Center-align the box */
+                padding: 20px; /* Add padding inside the box */
+                border: 2px solid #bcce8d; /* Border color and thickness */
+                border-radius: 10px; /* Round the corners */
+                background-color: #e4f9f5; /* Background color */
+            }
+
+            .info-container-light {
+                /* Similar styles as .info-container but with different colors */
+                width: 70%;
+                margin: 20px auto;
+                padding: 20px;
+                border: 2px solid #66bfbf;
+                border-radius: 10px;
+                background-color: #fff8e8;
+            }
+
+            /* Adjustments for headings and paragraphs inside the boxes */
+            .info-container h2,
+            .info-container-light h2 {
+                color: #11999e; /* Heading color */
+            }
+
+            .info-container p,
+            .info-container-light p {
+                color: #7f7f7f; /* Text color */
+                line-height: 1.5; /* Line height for readability */
+            }
+        </style>
+    </head>
+
+    <!-- Rest of your content -->
+    <!-- Navbar and other content -->
+{% endblock %}
+
+{% block GOTO %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'home' %}">GLD</a>
+    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button> -->
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'info_page' %}">Gold Brands</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="{% url 'information' %}">Information</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'plots' %}">Plots</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'goldpresentprice' %}">Gold Price</a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link {% block gold_price_active %}{% endblock gold_price_active %}" href="{% url 'goldpresentprice' %}">
+                    {% block gold_price %}Gold Price{% endblock gold_price %}
+                </a>
+              </li> -->
+        </ul>
+    </div>
+</nav>
+{% endblock GOTO %} 
+
+{% block body %}
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="info-Page">
+                
+                <div class="set-fluid info-container">
+                    <h2 class="h2-h3">Cumulative returns</h2>
+                    <p>
+                        A cumulative return on an investment is the aggregate amount that the investment 
+                        has gained or lost over time, independent of the amount of time involved. The cumulative 
+                        return is expressed as a percentage, and it is the raw mathematical return of the following calculation:
+                        <br>[(Current Price of Security)−(Original Price of Security)]/(Original Price of Security)​	
+                    </p>
+                </div>
+                <hr>
+                
+                <div class="set-fluid info-container-light">
+                    <h2 class="h2-h3">Moving averages</h2>
+                    <p>
+                        The moving average (MA) is a simple technical analysis tool that smooths out price data 
+                        by creating a constantly updated average price. The average is taken over a specific period 
+                        of time, like 3 days, 9 days.
+                    </p>
+                </div>
+                <hr>
+                
+                <div class="set-fluid info-container">
+                    <h2 class="h2-h3">Sharpe ratio</h2>
+                    <p>
+                        The ratio describes how much excess return you receive for the extra volatility you endure 
+                        for holding a riskier asset. Usually, any Sharpe ratio greater than 1.0 is considered acceptable 
+                        to good by investors. A ratio higher than 2.0 is rated as very good. A ratio of 3.0 or higher is 
+                        considered excellent. A ratio under 1.0 is considered sub-optimal.
+                    </p>
+                </div>
+                <hr>
+                
+                <div class="set-fluid info-container-light">
+                    <h2 class="h2-h3">R-squared</h2>
+                    <p>
+                        R-squared is a statistical measure of how close the data are to the fitted regression line. 
+                        It is also known as the coefficient of determination, or the coefficient of multiple determination 
+                        for multiple regression. The definition of R-squared is fairly straight-forward; it is the percentage 
+                        of the response variable variation that is explained by a linear model.
+                        <br>R-squared is always between 0 and 100%:<br>            
+                            1] 0% indicates that the model explains none of the variability of the response data around its mean.<br>
+                            2]100% indicates that the model explains all the variability of the response data around its mean.<br>            
+                        In general, the higher the R-squared, the better the model fits your data. However, there are important 
+                        conditions for this guideline that I’ll talk about both in this post and my next post.
+                    </p>
+                    <p>R<sup>2</sup> value: {% autoescape off %}{{r2_score}}{% endautoescape %}%</p><br><br>
+                </div>
+                <hr>
+                
+                <div class="set-fluid info-container">
+                    <h2 class="h2-h3">Linear regression model</h2>
+                    <p>
+                        Linear regression model used is:
+                        <br>
+                        {% autoescape off %}
+                            {{ RegressionModelFormula }}
+                        {% endautoescape %}
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

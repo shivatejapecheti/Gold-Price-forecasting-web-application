@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Include required meta tags, CSS, etc. -->
+    <title>Gold Price</title>
+    <style>
+        /* Your existing CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            /* background-color: #ffe8e8; */
+            background-image: url('https://wallpapersmug.com/download/1920x1080/4d7d03/light-colors-geometric-pattern-abstract.jpg');
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        /* Additional styling for the button */
+        .back-button {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .back-button a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ffdfc1;
+            color: #000000;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .back-button a:hover {
+            background-color: #ffb980;
+        }
+        .predi {
+            text-align: center;
+        }
+        .predic {
+            margin-left: 5%;
+            margin-right: 5%;
+            text-align: center;
+            color: #7c7c7c;
+        }
+        .container-fluid {
+            background-color: #fbffec;
+            margin-left: 25%;
+            margin-right: 25%;
+            border-radius: 25px;
+            box-shadow: 0 14px 18px rgba(0, 0, 0, 0.1); /* Adding shadow effect */
+            padding: 20px; /* Adding padding for better visual */
+        }
+        .back-button {
+            margin-bottom: 3%;
+        }
+        .priccc {
+            font-weight: bolder;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <h1 class="predi">Current Gold Price</h1>
+        <p class="predic">The live gold price is known as the spot gold price, which refers to the wholesale interbank price for a 400-ounce gold bar for delivery in two business days. It is the benchmark price on which all retail investment gold products are based. The gold price is traditionally quoted in troy ounces.</p>
+        <p class="priccc">The current gold price is: ${{ gold_price }}</p>
+        
+        <!-- Back button to go to home.html -->
+        <div class="back-button">
+            <a  href="home.html">Go Back to Home</a>
+        </div>
+    </div>
+    <!-- Additional styling/content as needed -->
+</body>
+</html>

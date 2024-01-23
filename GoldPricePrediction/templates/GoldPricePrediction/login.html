@@ -1,0 +1,95 @@
+<!-- login.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Carattere&family=Kalnia&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Kalnia', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://wallpapersmug.com/download/1920x1080/4d7d03/light-colors-geometric-pattern-abstract.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            text-align: center;
+            width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            background: linear-gradient(to bottom right, #ffd19c, #db6590);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 2px solid #fff; /* Adjust border color */
+        }
+
+        h1 {
+            font-family: 'Carattere', cursive;
+            margin-bottom: 20px;
+            color: white; /* Text color for heading */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: white; /* Text color for labels */
+        }
+        .input[type="text"]{
+            padding-right: -10px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: calc(100% - 22px); /* Adjust width */
+            padding: 10px;
+            
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            margin-left: 10px; /* Add margin for centering */
+        }
+
+        input[type="text"]:hover,
+        input[type="password"]:hover,
+        input[type="submit"]:hover {
+            border-color: #555;
+        }
+
+        input[type="submit"] {
+            background: linear-gradient(to right, #f2709c, #ff9472);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background: linear-gradient(to right, #ff9472, #f2709c);
+            transform: translateY(-3px); /* Move the button up slightly on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br><br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+</html>
